@@ -69,7 +69,7 @@ function renderCart() {
 }
 
 function checkout() {
-  if (cart.length === 0) { showToast('⚠️ Your cart is empty'); return; }
+  if (cart.length === 0) { showToast('Your cart is empty'); return; }
   if (!localStorage.getItem('pc_user')) { window.location = 'login.html'; return; }
   cart = [];
   saveCart();

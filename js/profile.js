@@ -26,7 +26,7 @@ function toggleEdit(id) {
 function saveEdit(id) {
   document.getElementById(id + '-view').style.display = 'grid';
   document.getElementById(id + '-edit').style.display = 'none';
-  showToast('✅ Profile updated successfully');
+  showToast('Profile updated successfully');
 }
 
 function cancelEdit(id) {

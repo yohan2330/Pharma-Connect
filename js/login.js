@@ -20,9 +20,9 @@ function switchTab(tab) {
 function login() {
   const email = document.getElementById('login-email').value.trim();
   const pass  = document.getElementById('login-password').value;
-  if (!email || !pass) { showToast('⚠️ Please fill in all fields'); return; }
+  if (!email || !pass) { showToast('Please fill in all fields'); return; }
   localStorage.setItem('pc_user', JSON.stringify({ email }));
-  showToast('👋 Welcome back!');
+  showToast('Welcome back!');
   setTimeout(() => window.location = 'index.html', 1000);
 }
 
@@ -30,8 +30,8 @@ function register() {
   const first = document.getElementById('reg-first').value.trim();
   const last  = document.getElementById('reg-last').value.trim();
   const email = document.getElementById('reg-email').value.trim();
-  if (!first || !last || !email) { showToast('⚠️ Please fill in all fields'); return; }
+  if (!first || !last || !email) { showToast('Please fill in all fields'); return; }
   localStorage.setItem('pc_user', JSON.stringify({ name: first + ' ' + last, email }));
-  showToast('🎉 Account created! Welcome to PharmaConnect');
+  showToast('Account created! Welcome to PharmaConnect');
   setTimeout(() => window.location = 'index.html', 1000);
 }

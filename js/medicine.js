@@ -8,18 +8,18 @@ function showToast(msg) {
 }
 
 const medicines = [
-  { id: 1,  name: 'Amoxicillin 500mg',     brand: 'Generic | Antibiotics',   emoji: '💊', price: 2400, badge: 'OTC', stock: 'in'  },
-  { id: 2,  name: 'Paracetamol 1g',         brand: 'Panadol | Pain Relief',   emoji: '🩹', price: 800,  badge: 'OTC', stock: 'in'  },
-  { id: 3,  name: 'Vitamin D3 1000IU',      brand: 'Pharmavit | Vitamins',    emoji: '🌿', price: 5500, badge: 'OTC', stock: 'in'  },
-  { id: 4,  name: 'Lisinopril 10mg',        brand: 'Generic | Cardiac',       emoji: '❤️', price: 3200, badge: 'Rx',  stock: 'low' },
-  { id: 5,  name: 'Metformin 500mg',        brand: 'Glucophage | Diabetes',   emoji: '🧪', price: 4100, badge: 'Rx',  stock: 'in'  },
-  { id: 6,  name: 'Azithromycin 250mg',     brand: 'Zithromax | Antibiotics', emoji: '💉', price: 6800, badge: 'Rx',  stock: 'in'  },
-  { id: 7,  name: 'Zinc + Vitamin C',       brand: 'Pharmavit | Vitamins',    emoji: '🍊', price: 3600, badge: 'OTC', stock: 'in'  },
-  { id: 8,  name: 'Ibuprofen 400mg',        brand: 'Brufen | Pain Relief',    emoji: '🩺', price: 1500, badge: 'OTC', stock: 'in'  },
-  { id: 9,  name: 'Omeprazole 20mg',        brand: 'Losec | Gastro',          emoji: '🫀', price: 4200, badge: 'OTC', stock: 'low' },
-  { id: 10, name: 'Cetirizine 10mg',        brand: 'Zyrtec | Allergy',        emoji: '🤧', price: 2100, badge: 'OTC', stock: 'in'  },
-  { id: 11, name: 'Baby Syrup Paracetamol', brand: 'Calpol | Pediatrics',     emoji: '🍼', price: 3800, badge: 'OTC', stock: 'in'  },
-  { id: 12, name: 'Iron + Folic Acid',      brand: 'Generic | Maternal',      emoji: '🌸', price: 2900, badge: 'OTC', stock: 'in'  },
+  { id: 1,  name: 'Amoxicillin 500mg',     brand: 'Generic | Antibiotics',    price: 2400, badge: 'OTC', stock: 'in'  },
+  { id: 2,  name: 'Paracetamol 1g',         brand: 'Panadol | Pain Relief',   price: 800,  badge: 'OTC', stock: 'in'  },
+  { id: 3,  name: 'Vitamin D3 1000IU',      brand: 'Pharmavit | Vitamins',    price: 5500, badge: 'OTC', stock: 'in'  },
+  { id: 4,  name: 'Lisinopril 10mg',        brand: 'Generic | Cardiac',       price: 3200, badge: 'Rx',  stock: 'low' },
+  { id: 5,  name: 'Metformin 500mg',        brand: 'Glucophage | Diabetes',   price: 4100, badge: 'Rx',  stock: 'in'  },
+  { id: 6,  name: 'Azithromycin 250mg',     brand: 'Zithromax | Antibiotics', price: 6800, badge: 'Rx',  stock: 'in'  },
+  { id: 7,  name: 'Zinc + Vitamin C',       brand: 'Pharmavit | Vitamins',    price: 3600, badge: 'OTC', stock: 'in'  },
+  { id: 8,  name: 'Ibuprofen 400mg',        brand: 'Brufen | Pain Relief',    price: 1500, badge: 'OTC', stock: 'in'  },
+  { id: 9,  name: 'Omeprazole 20mg',        brand: 'Losec | Gastro',          price: 4200, badge: 'OTC', stock: 'low' },
+  { id: 10, name: 'Cetirizine 10mg',        brand: 'Zyrtec | Allergy',        price: 2100, badge: 'OTC', stock: 'in'  },
+  { id: 11, name: 'Baby Syrup Paracetamol', brand: 'Calpol | Pediatrics',     price: 3800, badge: 'OTC', stock: 'in'  },
+  { id: 12, name: 'Iron + Folic Acid',      brand: 'Generic | Maternal',      price: 2900, badge: 'OTC', stock: 'in'  },
 ];
 
 let cart = JSON.parse(localStorage.getItem('pc_cart') || '[]');
