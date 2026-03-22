@@ -1,13 +1,2 @@
 [build]
   publish = "Frontend"
-```
-
-5. Save it (**Ctrl + S**)
-
-It should look like this in your folder:
-```
-📁 Pharma-Connect/
-├── netlify.toml        ← NEW FILE HERE
-├── 📁 Css/
-├── 📁 Frontend/
-└── 📁 Js/
