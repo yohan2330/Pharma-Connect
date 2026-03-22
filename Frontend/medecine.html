@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PharmaConnect — Medicines</title>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="../css/style.css"/>
+  
+  
+  
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo" onclick="window.location='index.html'">
+    <span>💊</span>Pharma<span>Connect</span>
+  </div>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="medicine.html" class="active">Medicines</a></li>
+    <li><a href="cart.html">Cart</a></li>
+    <li><a href="profile.html">Profile</a></li>
+  </ul>
+  <div class="nav-right">
+    <button class="cart-btn" onclick="window.location='cart.html'">🛒<span class="cart-badge" id="cart-count">0</span></button>
+    <button class="btn-nav-login" onclick="window.location='login.html'">Sign In</button>
+  </div>
+</nav>
+
+<div class="toast" id="toast"><span>✅</span><span id="toast-msg"></span></div>
+
+<div class="page-header">
+  <h1>💊 Medicine Catalogue</h1>
+  <p>Browse verified medicines from trusted partner pharmacies across Africa</p>
+</div>
+
+<div class="medicine-layout">
+  <aside class="filter-sidebar">
+    <h3>🔧 Filters</h3>
+    <div class="filter-group">
+      <h3 class="filter-label">Category</h3>
+      <div>
+        <div class="filter-tag active" onclick="toggleTag(this)">All</div>
+        <div class="filter-tag" onclick="toggleTag(this)">Antibiotics</div>
+        <div class="filter-tag" onclick="toggleTag(this)">Vitamins</div>
+        <div class="filter-tag" onclick="toggleTag(this)">Cardiac</div>
+        <div class="filter-tag" onclick="toggleTag(this)">Pain Relief</div>
+        <div class="filter-tag" onclick="toggleTag(this)">Pediatrics</div>
+      </div>
+    </div>
+    <div class="filter-group">
+      <h3 class="filter-label">Availability</h3>
+      <label><input type="checkbox" checked> In Stock</label>
+      <label><input type="checkbox"> Low Stock</label>
+      <label><input type="checkbox"> All</label>
+    </div>
+    <div class="filter-group">
+      <h3 class="filter-label">Type</h3>
+      <label><input type="checkbox" checked> OTC</label>
+      <label><input type="checkbox"> Prescription (Rx)</label>
+      <label><input type="checkbox"> Generic</label>
+    </div>
+    <div class="filter-group">
+      <h3 class="filter-label">Max Price (RWF)</h3>
+      <input type="range" class="price-range" min="0" max="50000" value="50000"
+        oninput="document.getElementById('price-val').textContent=this.value">
+      <div style="font-size:.82rem;color:var(--gray-700);margin-top:5px;">
+        Up to RWF <span id="price-val">50000</span>
+      </div>
+    </div>
+  </aside>
+  <div>
+    <div class="search-bar-wrap">
+      <input class="search-input" type="text" id="search-input" placeholder="🔍  Search medicines, brands, conditions...">
+      <select class="sort-select" id="sort-select">
+        <option>Sort: Featured</option>
+        <option>Price: Low–High</option>
+        <option>Price: High–Low</option>
+        <option>Alphabetical</option>
+      </select>
+    </div>
+    <div class="medicines-grid" id="med-grid"></div>
+  </div>
+</div>
+
+<script src="../js/medicine.js"></script>
+</body>
+</html>

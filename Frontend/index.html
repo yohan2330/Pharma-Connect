@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PharmaConnect — Home</title>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="../css/style.css"/>
+  
+  
+  
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo" onclick="window.location='index.html'">
+    <span>💊</span>Pharma<span>Connect</span>
+  </div>
+  <ul class="nav-links">
+    <li><a href="index.html" class="active">Home</a></li>
+    <li><a href="medicine.html">Medicines</a></li>
+    <li><a href="cart.html">Cart</a></li>
+    <li><a href="profile.html">Profile</a></li>
+  </ul>
+  <div class="nav-right">
+    <button class="cart-btn" onclick="window.location='cart.html'">🛒<span class="cart-badge">0</span></button>
+    <button class="btn-nav-login" onclick="window.location='login.html'">Sign In</button>
+  </div>
+</nav>
+
+<div class="toast" id="toast"><span>✅</span><span id="toast-msg"></span></div>
+
+<div class="hero">
+  <div class="hero-tag">🌍 Transforming Healthcare in Africa</div>
+  <h1>Your <em>Trusted</em> Pharmacy<br>Now Digital &amp; Accessible</h1>
+  <p>PharmaConnect bridges the gap between patients, pharmacies, and suppliers — making essential medicines available, verified, and delivered to your door.</p>
+  <div class="hero-btns">
+    <button class="btn-primary" onclick="window.location='medicine.html'">🔍 Browse Medicines</button>
+    <button class="btn-outline" onclick="window.location='login.html'">Create Account →</button>
+  </div>
+</div>
+
+<footer>
+  <strong>PharmaConnect</strong> &mdash; Transforming Pharmaceutical Supply Chains in Africa © 2025<br>
+  <span style="font-size:.75rem;margin-top:6px;display:block;">Built as part of MSc Software Engineering Summative | Agile Scrum Development Model</span>
+</footer>
+
+<script src="../js/home.js"></script>
+</body>
+</html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PharmaConnect — Profile</title>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="../css/style.css"/>
+  
+  
+  
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo" onclick="window.location='index.html'">
+    <span>💊</span>Pharma<span>Connect</span>
+  </div>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="medicine.html">Medicines</a></li>
+    <li><a href="cart.html">Cart</a></li>
+    <li><a href="profile.html" class="active">Profile</a></li>
+  </ul>
+  <div class="nav-right">
+    <button class="cart-btn" onclick="window.location='cart.html'">🛒<span class="cart-badge" id="cart-count">0</span></button>
+    <button class="btn-nav-login" onclick="logout()">Sign Out</button>
+  </div>
+</nav>
+
+<div class="toast" id="toast"><span>✅</span><span id="toast-msg"></span></div>
+
+<div class="page-header">
+  <h1>👤 My Profile</h1>
+  <p>Manage your account, health info, and order history</p>
+</div>
+
+<div class="profile-layout">
+  <aside>
+    <div class="profile-card">
+      <div class="profile-cover"></div>
+      <div class="profile-avatar-wrap">
+        <div class="profile-avatar">👤</div>
+        <div class="profile-name" id="p-name">Amara Nkosi</div>
+        <div class="profile-email" id="p-email"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="7d1c101c0f1c531316120e143d18101c1411531e1210">[email&#160;protected]</a></div>
+        <div class="profile-badge">Premium Patient</div>
+      </div>
+      <nav class="profile-nav">
+        <div class="profile-nav-item active" onclick="selectTab(this,'pTab-personal')">👤 Personal Info</div>
+        <div class="profile-nav-item" onclick="selectTab(this,'pTab-health')">❤️ Health Profile</div>
+        <div class="profile-nav-item" onclick="selectTab(this,'pTab-orders')">📦 Order History</div>
+        <div class="profile-nav-item" onclick="selectTab(this,'pTab-prescriptions')">💊 Prescriptions</div>
+        <div class="profile-nav-item" onclick="selectTab(this,'pTab-settings')">⚙️ Settings</div>
+      </nav>
+    </div>
+  </aside>
+
+  <div class="profile-content">
+
+    <div id="pTab-personal">
+      <div class="content-card">
+        <div class="content-card-header">Personal Information
+          <button class="edit-btn" onclick="toggleEdit('personal-info')">✏️ Edit</button>
+        </div>
+        <div class="info-grid" id="personal-info-view">
+          <div class="info-field"><label>First Name</label><div class="value">Amara</div></div>
+          <div class="info-field"><label>Last Name</label><div class="value">Nkosi</div></div>
+          <div class="info-field"><label>Date of Birth</label><div class="value">14 March 1992</div></div>
+          <div class="info-field"><label>Gender</label><div class="value">Female</div></div>
+          <div class="info-field"><label>Phone</label><div class="value">+250 788 123 456</div></div>
+          <div class="info-field"><label>Email</label><div class="value"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="1d7c707c6f7c337376726e745d78707c7471337e7270">[email&#160;protected]</a></div></div>
+          <div class="info-field"><label>Address</label><div class="value">Kigali, Rwanda</div></div>
+          <div class="info-field"><label>ID / Passport</label><div class="value">RW-1992-XXXX</div></div>
+        </div>
+        <div class="info-grid" id="personal-info-edit" style="display:none;">
+          <div class="info-field"><label>First Name</label><input class="form-input" value="Amara"></div>
+          <div class="info-field"><label>Last Name</label><input class="form-input" value="Nkosi"></div>
+          <div class="info-field"><label>Date of Birth</label><input class="form-input" type="date" value="1992-03-14"></div>
+          <div class="info-field"><label>Gender</label><input class="form-input" value="Female"></div>
+          <div class="info-field"><label>Phone</label><input class="form-input" value="+250 788 123 456"></div>
+          <div class="info-field"><label>Email</label><input class="form-input" value="amara.nkosi@email.com"></div>
+          <div class="info-field"><label>Address</label><input class="form-input" value="Kigali, Rwanda"></div>
+          <div class="info-field"><label>ID / Passport</label><input class="form-input" value="RW-1992-XXXX"></div>
+          <div style="grid-column:span 2;display:flex;gap:10px;margin-top:4px;">
+            <button class="btn-primary" style="font-size:.88rem;padding:10px 22px;" onclick="saveEdit('personal-info')">Save Changes</button>
+            <button class="btn-cancel" onclick="cancelEdit('personal-info')">Cancel</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="pTab-health" style="display:none;">
+      <div class="content-card">
+        <div class="content-card-header">Health Profile</div>
+        <div class="info-grid">
+          <div class="info-field"><label>Blood Type</label><div class="value">O+</div></div>
+          <div class="info-field"><label>Weight</label><div class="value">62 kg</div></div>
+          <div class="info-field"><label>Height</label><div class="value">165 cm</div></div>
+          <div class="info-field"><label>Chronic Conditions</label><div class="value">None</div></div>
+        </div>
+      </div>
+      <div class="content-card" style="margin-top:16px;">
+        <div class="content-card-header">Known Allergies</div>
+        <div style="padding:20px 28px;display:flex;gap:8px;flex-wrap:wrap;">
+          <span class="allergy-tag">Penicillin</span>
+          <span class="allergy-tag">Sulfonamides</span>
+        </div>
+      </div>
+    </div>
+
+    <div id="pTab-orders" style="display:none;">
+      <div class="content-card">
+        <div class="content-card-header">Order History</div>
+        <div class="order-history-list">
+          <div class="order-row"><div class="order-icon">💊</div><div class="order-info"><h4>Amoxicillin 500mg × 2</h4><p>Order #PC-2025-1842 · Jan 12, 2025</p></div><span class="order-status delivered">Delivered</span></div>
+          <div class="order-row"><div class="order-icon">🌿</div><div class="order-info"><h4>Vitamin D3 + Zinc Kit</h4><p>Order #PC-2025-1901 · Jan 20, 2025</p></div><span class="order-status shipped">Shipped</span></div>
+          <div class="order-row"><div class="order-icon">❤️</div><div class="order-info"><h4>Lisinopril 10mg × 1</h4><p>Order #PC-2025-1953 · Jan 25, 2025</p></div><span class="order-status processing">Processing</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div id="pTab-prescriptions" style="display:none;">
+      <div class="content-card">
+        <div class="content-card-header">Active Prescriptions</div>
+        <div class="order-history-list">
+          <div class="order-row"><div class="order-icon">📄</div><div class="order-info"><h4>Amoxicillin 500mg — 3× daily</h4><p>Dr. Mugisha · Expires: 10 Feb 2025</p></div><span class="order-status delivered">Active</span></div>
+          <div class="order-row"><div class="order-icon">📄</div><div class="order-info"><h4>Paracetamol 1g — PRN</h4><p>Dr. Uwimana · Expires: 28 Feb 2025</p></div><span class="order-status processing">Active</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div id="pTab-settings" style="display:none;">
+      <div class="content-card">
+        <div class="content-card-header">Account Settings</div>
+        <div style="padding:24px 28px;">
+          <div style="margin-bottom:18px;">
+            <label style="font-size:.82rem;font-weight:600;color:var(--gray-700);display:block;margin-bottom:6px;">Language</label>
+            <select class="form-input" style="cursor:pointer;">
+              <option>English</option><option>Français</option><option>Kinyarwanda</option>
+            </select>
+          </div>
+          <button class="btn-primary" style="font-size:.88rem;padding:10px 24px;">Save Settings</button>
+          <div style="margin-top:28px;padding-top:20px;border-top:1px solid var(--gray-200);">
